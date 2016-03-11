@@ -43,7 +43,8 @@ oledImage.printToFile(screen, imageFile)
 
 
 ## display the image on the OLED Expansion
-oledExp.driverInit()
-oledExp.drawFromFile(imageFile)
+oledExp.driverInit()			# initialize the screen
+oledExp.setDisplayMode(1)		# invert the colours
+oledExp.drawFromFile(imageFile)	# display the image file
 
-#qr.print_tty()
+
