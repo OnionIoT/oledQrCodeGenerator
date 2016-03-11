@@ -7,13 +7,6 @@ SCREEN_HEIGHT 		= 64
 SCREEN_PAGE_HEIGHT 	= 8
 SCREEN_PAGES 		= (SCREEN_HEIGHT/SCREEN_PAGE_HEIGHT)
 
-# initialize an array for the oled image
-def initScreen ():
-	dl = [[0] * SCREEN_WIDTH for x in xrange(SCREEN_PAGES)]
-	#for i in range(0, SCREEN_PAGES):
-	#	dl[i] = '0' * SCREEN_WIDTH
-
-	return dl
 
 # print the oled image to the screen
 def printScreen (obj, newlines=True):
@@ -69,7 +62,7 @@ def matrixPointsToByte (matrix, X, startingY):
 #	xOffset	- how much to shift the image on the X axis in the OLED image
 #	yOffset	- how much to shift the image on the Y axis in the OLED image 
 def convertToOledImg (matrix, xOffset, yOffset):
-	oled 	= initScreen()
+	oled 	= [[0] * SCREEN_WIDTH for x in xrange(SCREEN_PAGES)]
 
 	# loop through the rows (increasing by page size)
 	for y in range(0, len(matrix), SCREEN_PAGES):

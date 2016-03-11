@@ -1,6 +1,6 @@
 import qrcode
 import sys
-import oled
+import oledImage
 
 
 # check for arguments
@@ -31,13 +31,13 @@ matrix = qr.get_matrix()
 print '> Generated QR Code: %dx%d'%(len(matrix[0]), len(matrix) )
 
 # double the QR code size if it's less than half of the OLED size
-dMatrix = oled.doubleMatrixSize(matrix)
-xOffset = oled.SCREEN_WIDTH/2 - len(dMatrix[0])/2
+dMatrix = oledImage.doubleMatrixSize(matrix)
+xOffset = oledImage.SCREEN_WIDTH/2 - len(dMatrix[0])/2
 
 # convert the QR code to OLED image
-screen = oled.convertToOledImg(dMatrix, xOffset, 0)
-#oled.printScreen(screen, newlines=False)
-oled.printToFile(screen, imageFile)
+screen = oledImage.convertToOledImg(dMatrix, xOffset, 0)
+#oledImage.printScreen(screen, newlines=False)
+oledImage.printToFile(screen, imageFile)
 
 
 
