@@ -1,5 +1,5 @@
 from qrcode import constants, exceptions, util
-#from qrcode.image.base import BaseImage
+# REMOVED image factory
 
 import six
 from bisect import bisect_left
@@ -35,9 +35,7 @@ class QRCode:
         # Spec says border should be at least four boxes wide, but allow for
         # any (e.g. for producing printable QR codes).
         self.border = int(border)
-        # self.image_factory = image_factory
-        # if image_factory is not None:
-        #     assert issubclass(image_factory, BaseImage)
+        # REMOVED image factory
         self.clear()
 
     def clear(self):
@@ -251,32 +249,8 @@ class QRCode:
             out.write('\n')
         out.flush()
 
-    # def make_image(self, image_factory=None, **kwargs):
-    #     """
-    #     Make an image from the QR Code data.
+    # REMOVED make_image function
 
-    #     If the data has not been compiled yet, make it first.
-    #     """
-    #     _check_box_size(self.box_size)
-    #     if self.data_cache is None:
-    #         self.make()
-
-    #     if image_factory is not None:
-    #         assert issubclass(image_factory, BaseImage)
-    #     else:
-    #         image_factory = self.image_factory
-    #         if image_factory is None:
-    #             # Use PIL by default
-    #             from qrcode.image.pil import PilImage
-    #             image_factory = PilImage
-
-    #     im = image_factory(
-    #         self.border, self.modules_count, self.box_size, **kwargs)
-    #     for r in range(self.modules_count):
-    #         for c in range(self.modules_count):
-    #             if self.modules[r][c]:
-    #                 im.drawrect(r, c)
-    #     return im
 
     def setup_timing_pattern(self):
         for r in range(8, self.modules_count - 8):

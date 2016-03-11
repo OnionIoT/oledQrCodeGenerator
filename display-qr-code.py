@@ -1,6 +1,7 @@
 import qrcode
 import sys
 import oledImage
+from OmegaExpansion import oledExp
 
 
 # check for arguments
@@ -34,11 +35,15 @@ print '> Generated QR Code: %dx%d'%(len(matrix[0]), len(matrix) )
 dMatrix = oledImage.doubleMatrixSize(matrix)
 xOffset = oledImage.SCREEN_WIDTH/2 - len(dMatrix[0])/2
 
-# convert the QR code to OLED image
+
+## convert the QR code to an OLED image
 screen = oledImage.convertToOledImg(dMatrix, xOffset, 0)
 #oledImage.printScreen(screen, newlines=False)
 oledImage.printToFile(screen, imageFile)
 
 
+## display the image on the OLED Expansion
+oledExp.driverInit()
+oledExp.drawFromFile(imageFile)
 
 #qr.print_tty()
