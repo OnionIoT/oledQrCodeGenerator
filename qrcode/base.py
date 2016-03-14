@@ -1,4 +1,4 @@
-from qrcode import constants
+from . import constants
 
 EXP_TABLE = list(range(256))
 

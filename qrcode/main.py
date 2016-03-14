@@ -1,4 +1,4 @@
-from qrcode import constants, exceptions, util
+from . import constants, exceptions, util
 # REMOVED image factory
 
 import six
