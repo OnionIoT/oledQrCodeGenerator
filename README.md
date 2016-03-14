@@ -6,7 +6,7 @@ Encode text and display QR Code on OLED Expansion
 
 On your Omega:
 ```
-git clone https://github.com/OnionIoT/oled-qr-code-generator.git
+git clone https://github.com/OnionIoT/oledQrCodeGenerator.git
 ```
 
 
@@ -23,10 +23,23 @@ opkg install git git-http python-light python-codecs pyOledExp
 
 Run the following command:
 ```
-python oled-qr-code-generator/display-qr-code.py '<text to encode>'
+python oledQrCodeGenerator/main.py '<text to encode>'
 ```
 
 This will create a QR Code with the specified text and display it on the OLED Display.
+
+
+
+## Using the Module
+
+The code here can also be used as a module to be included in other scripts.
+
+```
+import oledQrCodeGenerator
+
+
+oledQrCodeGenerator.dispQrCode('Hello!')
+```
 
 
 
