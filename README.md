@@ -4,11 +4,6 @@ Encode text and display QR Code on OLED Expansion
 
 # Installation 
 
-On your Omega:
-```
-git clone https://github.com/OnionIoT/oledQrCodeGenerator.git
-```
-
 
 ## Required Packages
 
@@ -17,6 +12,14 @@ Install the following packages:
 opkg update
 opkg install git git-http python-light python-codecs pyOledExp
 ```
+
+## Grabbing the Repo
+
+On your Omega:
+```
+git clone https://github.com/OnionIoT/oledQrCodeGenerator.git
+```
+
 
 
 # Generating a QR Code
@@ -46,4 +49,4 @@ oledQrCodeGenerator.dispQrCode('Hello!')
 # Acknowledgements
 
 The code in the `qrcode` directory is a stripped-down version of lincolnloop's `python-qrcode` repo:
-https://github.com/lincolnloop/python-qrcode/tree/master/qrcode
+https://github.com/lincolnloop/python-qrcode
