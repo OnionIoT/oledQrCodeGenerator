@@ -44,14 +44,16 @@ def dispQrCode (data, imageFile='qr-code.lcd'):
 
 if __name__ == '__main__':  # pragma: no cover
 	import sys
+	data 	= ""
 
 	# check for arguments
 	if len(sys.argv) < 2:
-		print 'ERROR: Expected data to encode!'
-		exit()
-
-	# load the data 
-	data = sys.argv[1]
+		print 'Expected data to encode!'
+		print 'Using default text :)'
+		data = 'Onion Omega: Invent the Future'
+	else:
+		# load the data
+		data = sys.argv[1]
 
 	# run the function to generate the qr code and display on the OLED
 	dispQrCode(data)
