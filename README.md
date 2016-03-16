@@ -2,6 +2,11 @@
 Encode text and display QR Code on OLED Expansion
 
 
+# Tutorial
+
+Check out the full tutorial on using this repo here: https://wiki.onion.io/Projects/OLED-QR-Code-Generator
+
+
 # Installation 
 
 
